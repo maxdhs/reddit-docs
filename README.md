@@ -1,4 +1,4 @@
-# Spammer API Documentation
+# Reddit API Documentation
 
 `const API = "https://spammer-backend.onrender.com"`
 
