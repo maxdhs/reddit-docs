@@ -1,6 +1,6 @@
 # Reddit API Documentation
 
-`const API = "https://spammer-backend.onrender.com"`
+`const API = "https://reddit-backend-w8g7.onrender.com"`
 
 ## GET /messages
 
