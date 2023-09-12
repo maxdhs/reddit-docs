@@ -12,11 +12,12 @@ fetch(`${API}/`);
 
 ### Response:
 
-````js
+```js
 {
   "success": true,
   "message": "Welcome to the Reddit server!"
 }
+```
 
 ## GET /posts
 
@@ -24,7 +25,7 @@ fetch(`${API}/`);
 
 ```js
 fetch(`${API}/posts`);
-````
+```
 
 ### Response:
 
@@ -362,6 +363,266 @@ fetch(`${API}/posts/65ce7d00-1a16-41af-b333-58cc84d9ffd4`, {
     "userId": "03ca1281-ddb3-4421-a8f6-22c76b6a99b8",
     "subredditId": "f3e47327-808e-4343-b6d9-bed030c2e9ff",
     "parentId": null
+  }
+}
+```
+
+## GET /subreddits/
+
+### Request:
+
+```js
+fetch(`${API}/subreddits/`);
+```
+
+### Response:
+
+```js
+{
+  "success": true,
+  "subreddits": [
+    {
+      "id": "88e8718f-931f-4e64-8849-67cabb6cb94a",
+      "name": "Crypto",
+      "userId": "b741adcd-36f2-4d83-af9b-a52f91804aa5"
+    },
+    {
+      "id": "9e30964a-015f-458c-842c-47382d519f13",
+      "name": "Fashion",
+      "userId": "b741adcd-36f2-4d83-af9b-a52f91804aa5"
+    },
+    {
+      "id": "f3e47327-808e-4343-b6d9-bed030c2e9ff",
+      "name": "Technology",
+      "userId": "b741adcd-36f2-4d83-af9b-a52f91804aa5"
+    }
+  ]
+}
+```
+
+## POST /subreddits
+
+### Request:
+
+```js
+fetch(`${API}/subreddits`, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIzYjExZDIzMy1mZTE0LTQ2NzgtYjAwMC03YzJkNTFkYmE3MWEiLCJpYXQiOjE2OTQ1MjE5Nzl9.6qiWcCWgOA3Wvie8pjimOs1j8irhOQy6WfdVUNhUhkU",
+  },
+  body: JSON.stringify({
+    name: "programminghumor",
+  }),
+});
+```
+
+### Response:
+
+```js
+{
+  "success": true,
+  "subreddit": {
+    "id": "61980b03-2d7f-45c9-95c0-f3be8a4c6595",
+    "name": "programminghumor",
+    "userId": "03ca1281-ddb3-4421-a8f6-22c76b6a99b8"
+  }
+}
+```
+
+## DELETE /subreddits/:subredditId
+
+### Request:
+
+```js
+fetch(`${API}/subreddits/61980b03-2d7f-45c9-95c0-f3be8a4c6595`, {
+  method: "DELETE",
+  headers: {
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIzYjExZDIzMy1mZTE0LTQ2NzgtYjAwMC03YzJkNTFkYmE3MWEiLCJpYXQiOjE2OTQ1MjE5Nzl9.6qiWcCWgOA3Wvie8pjimOs1j8irhOQy6WfdVUNhUhkU",
+  },
+});
+```
+
+### Response:
+
+```js
+{
+  "success": true,
+  "subreddit": {
+    "id": "61980b03-2d7f-45c9-95c0-f3be8a4c6595",
+    "name": "programminghumor",
+    "userId": "03ca1281-ddb3-4421-a8f6-22c76b6a99b8"
+  }
+}
+```
+
+## POST /users/register
+
+### Request:
+
+```js
+fetch(`${API}/users/register`, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    username: "max2",
+    password: "123",
+  }),
+});
+```
+
+### Response:
+
+```js
+{
+  "success": true,
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDY1MjQ3Ny0yZDY1LTQzYzctYTJmMS1mMzU4ZTQyMGQxYWEiLCJpYXQiOjE2OTQ1Mjk3MDh9.a1HjJulV55JAwyKfKt8sTjpq0AKgGcahBNM1efgFE5g"
+}
+```
+
+## POST /users/login
+
+### Request:
+
+```js
+fetch(`${API}/users/login`, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    username: "max2",
+    password: "123",
+  }),
+});
+```
+
+### Response:
+
+```js
+{
+  "success": true,
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDY1MjQ3Ny0yZDY1LTQzYzctYTJmMS1mMzU4ZTQyMGQxYWEiLCJpYXQiOjE2OTQ1Mjk3MDh9.a1HjJulV55JAwyKfKt8sTjpq0AKgGcahBNM1efgFE5g"
+}
+```
+
+## GET /users/token
+
+### Request:
+
+```js
+fetch(`${API}/users/token`, {
+  headers: {
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIzYjExZDIzMy1mZTE0LTQ2NzgtYjAwMC03YzJkNTFkYmE3MWEiLCJpYXQiOjE2OTQ1MjE5Nzl9.6qiWcCWgOA3Wvie8pjimOs1j8irhOQy6WfdVUNhUhkU",
+  },
+});
+```
+
+### Response:
+
+```js
+{
+  "success": true,
+  "user": {
+    "id": "03ca1281-ddb3-4421-a8f6-22c76b6a99b8",
+    "username": "max"
+  }
+}
+```
+
+## POST /votes/upvotes/:postId
+
+### Request:
+
+```js
+fetch(`${API}/votes/upvotes/0a817d6e-be92-430e-a6f4-719801738c64`, {
+  method: "POST",
+});
+```
+
+### Response:
+
+```js
+{
+  "success": true,
+  "upvote": {
+    "id": "f0e37487-4c25-475c-b8dc-6e40d8bcac6e",
+    "userId": "03ca1281-ddb3-4421-a8f6-22c76b6a99b8",
+    "postId": "0a817d6e-be92-430e-a6f4-719801738c64"
+  }
+}
+```
+
+## POST /votes/upvotes/:postId
+
+### Request:
+
+```js
+fetch(`${API}/votes/downvotes/0a817d6e-be92-430e-a6f4-719801738c64`, {
+  method: "POST",
+});
+```
+
+### Response:
+
+```js
+{
+  "success": true,
+  "downvote": {
+    "id": "af69871c-c648-4332-8b01-fe332de2e7f4",
+    "userId": "03ca1281-ddb3-4421-a8f6-22c76b6a99b8",
+    "postId": "0a817d6e-be92-430e-a6f4-719801738c64"
+  }
+}
+```
+
+## DELETE /votes/upvotes/:postId
+
+### Request:
+
+```js
+fetch(`${API}/votes/upvotes/0a817d6e-be92-430e-a6f4-719801738c64`, {
+  method: "DELETE",
+});
+```
+
+### Response:
+
+```js
+{
+  "success": true,
+  "upvote": {
+    "id": "f0e37487-4c25-475c-b8dc-6e40d8bcac6e",
+    "userId": "03ca1281-ddb3-4421-a8f6-22c76b6a99b8",
+    "postId": "0a817d6e-be92-430e-a6f4-719801738c64"
+  }
+}
+```
+
+## DELETE /votes/downvotes/:postId
+
+### Request:
+
+```js
+fetch(`${API}/votes/downvotes/0a817d6e-be92-430e-a6f4-719801738c64`, {
+  method: "DELETE",
+});
+```
+
+### Response:
+
+```js
+{
+  "success": true,
+  "downvote": {
+    "id": "af69871c-c648-4332-8b01-fe332de2e7f4",
+    "userId": "03ca1281-ddb3-4421-a8f6-22c76b6a99b8",
+    "postId": "0a817d6e-be92-430e-a6f4-719801738c64"
   }
 }
 ```
