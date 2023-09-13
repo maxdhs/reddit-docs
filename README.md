@@ -542,6 +542,10 @@ fetch(`${API}/users/token`, {
 ```js
 fetch(`${API}/votes/upvotes/0a817d6e-be92-430e-a6f4-719801738c64`, {
   method: "POST",
+  headers: {
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIzYjExZDIzMy1mZTE0LTQ2NzgtYjAwMC03YzJkNTFkYmE3MWEiLCJpYXQiOjE2OTQ1MjE5Nzl9.6qiWcCWgOA3Wvie8pjimOs1j8irhOQy6WfdVUNhUhkU",
+  },
 });
 ```
 
@@ -565,6 +569,10 @@ fetch(`${API}/votes/upvotes/0a817d6e-be92-430e-a6f4-719801738c64`, {
 ```js
 fetch(`${API}/votes/downvotes/0a817d6e-be92-430e-a6f4-719801738c64`, {
   method: "POST",
+  headers: {
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIzYjExZDIzMy1mZTE0LTQ2NzgtYjAwMC03YzJkNTFkYmE3MWEiLCJpYXQiOjE2OTQ1MjE5Nzl9.6qiWcCWgOA3Wvie8pjimOs1j8irhOQy6WfdVUNhUhkU",
+  },
 });
 ```
 
@@ -588,6 +596,10 @@ fetch(`${API}/votes/downvotes/0a817d6e-be92-430e-a6f4-719801738c64`, {
 ```js
 fetch(`${API}/votes/upvotes/0a817d6e-be92-430e-a6f4-719801738c64`, {
   method: "DELETE",
+  headers: {
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIzYjExZDIzMy1mZTE0LTQ2NzgtYjAwMC03YzJkNTFkYmE3MWEiLCJpYXQiOjE2OTQ1MjE5Nzl9.6qiWcCWgOA3Wvie8pjimOs1j8irhOQy6WfdVUNhUhkU",
+  },
 });
 ```
 
@@ -611,6 +623,10 @@ fetch(`${API}/votes/upvotes/0a817d6e-be92-430e-a6f4-719801738c64`, {
 ```js
 fetch(`${API}/votes/downvotes/0a817d6e-be92-430e-a6f4-719801738c64`, {
   method: "DELETE",
+  headers: {
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIzYjExZDIzMy1mZTE0LTQ2NzgtYjAwMC03YzJkNTFkYmE3MWEiLCJpYXQiOjE2OTQ1MjE5Nzl9.6qiWcCWgOA3Wvie8pjimOs1j8irhOQy6WfdVUNhUhkU",
+  },
 });
 ```
 
