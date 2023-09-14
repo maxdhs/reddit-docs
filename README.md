@@ -562,7 +562,7 @@ fetch(`${API}/votes/upvotes/0a817d6e-be92-430e-a6f4-719801738c64`, {
 }
 ```
 
-## POST /votes/upvotes/:postId
+## POST /votes/downvotes/:postId
 
 ### Request:
 
