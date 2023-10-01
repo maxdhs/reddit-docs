@@ -265,6 +265,60 @@ fetch(`${API}/posts`);
 }
 ```
 
+## GET /posts/:postId
+
+### Request:
+
+```js
+fetch(`${API}/posts/280c3437-69aa-4f35-bd67-2d11b5cf0596`);
+```
+
+### Response:
+
+```js
+{
+  "success": true,
+  "post": {
+      "id": "280c3437-69aa-4f35-bd67-2d11b5cf0596",
+      "text": "how much is btc worth",
+      "title": "btc",
+      "userId": "b741adcd-36f2-4d83-af9b-a52f91804aa5",
+      "subredditId": "88e8718f-931f-4e64-8849-67cabb6cb94a",
+      "parentId": null,
+      "user": {
+        "id": "b741adcd-36f2-4d83-af9b-a52f91804aa5",
+        "username": "katie",
+        "password": "$2b$10$oFyb0maubaWpAOUZmv8HYekCILQwiMGxsRLVQl2hlzxMC3bepiDBu"
+      },
+      "subreddit": {
+        "id": "88e8718f-931f-4e64-8849-67cabb6cb94a",
+        "name": "Crypto",
+        "userId": "b741adcd-36f2-4d83-af9b-a52f91804aa5"
+      },
+      "upvotes": [
+        {
+          "id": "4e6cd525-ae64-464d-9720-fa51bb7b6db4",
+          "userId": "b741adcd-36f2-4d83-af9b-a52f91804aa5",
+          "postId": "280c3437-69aa-4f35-bd67-2d11b5cf0596"
+        }
+      ],
+      "downvotes": [],
+      "children": [
+        {
+          "id": "67836f3e-0695-407e-bd0e-77d2dcb71101",
+          "text": "im a child",
+          "title": "child",
+          "userId": "03ca1281-ddb3-4421-a8f6-22c76b6a99b8",
+          "subredditId": "88e8718f-931f-4e64-8849-67cabb6cb94a",
+          "parentId": "280c3437-69aa-4f35-bd67-2d11b5cf0596"
+        }
+      ]
+    },
+
+
+}
+```
+
 ## POST /posts
 
 ### Request:
