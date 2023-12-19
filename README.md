@@ -46,6 +46,28 @@ fetch(`${API}/users/login`, {
 }
 ```
 
+## POST /users/logout
+
+### Request:
+
+```js
+fetch(`${API}/users/login`, {
+  method: "POST",
+  body: JSON.stringify({
+    username: "max2",
+    password: "123",
+  }),
+});
+```
+
+### Response:
+
+```js
+{
+  "success": true
+}
+```
+
 ## POST /posts
 
 ### Request:
@@ -156,29 +178,6 @@ fetch(`${API}/subreddits`, {
     "id": "971df805-0536-4339-b572-6d1096260c34",
     "name": "programminghumor",
     "userId": "c6e05954-1c2e-4f14-92e0-5827266b5a2e"
-  }
-}
-```
-
-## DELETE /subreddits/:subredditId
-
-### Request:
-
-```js
-fetch(`${API}/subreddits/61980b03-2d7f-45c9-95c0-f3be8a4c6595`, {
-  method: "DELETE",
-});
-```
-
-### Response:
-
-```js
-{
-  "success": true,
-  "subreddit": {
-    "id": "61980b03-2d7f-45c9-95c0-f3be8a4c6595",
-    "name": "programminghumor",
-    "userId": "03ca1281-ddb3-4421-a8f6-22c76b6a99b8"
   }
 }
 ```
